@@ -1,0 +1,4 @@
+{
+    "server local": "python -m http.server",
+    "server flask": "python -m server"
+}
