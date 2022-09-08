@@ -58,6 +58,7 @@
     const app = new Vue({
       el: '#app',
       data: {
+	server_address: 'http://25.4.97.20:5000/',
         frenchText: '',
         englishTranslate: '[Waiting your input text ...]',
         englishText: '',
@@ -76,7 +77,7 @@
       methods: {
         translateInEnglish: function () {
           var vm = this;
-          axios.get("http://127.0.0.1:5000/frtoen", {
+          axios.get(this.server_address + "frtoen", {
             params: {
               sentence: this.frenchText
             }
@@ -91,7 +92,7 @@
         translateInFrench: function () {
           // this.frenchTranslate = this.englishText == '' ? '[En attente de votre saisie de texte ...]' : this.englishText;
           var vm = this;
-          axios.get("http://127.0.0.1:5000/entofr", {
+          axios.get(this.server_address + "entofr", {
             params: {
               sentence: this.englishText
             }
